@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const AboutUs = () => {
   // Define team members with their names, descriptions, image file names, LinkedIn, and GitHub profiles
@@ -42,45 +44,72 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="tw-bg-blue-300 tw-flex tw-flex-col tw-justify-center tw-items-center">
-      <h1 className="tw-text-center tw-font-bold tw-text-4xl tw-py-8">
+    <div className="tw-bg-blue-300 tw-flex tw-flex-col tw-justify-center tw-items-center tw-py-8">
+      <h1 className="tw-text-center tw-font-bold tw-text-4xl tw-mb-8">
         MEET THE TEAM
       </h1>
-      <div className="tw-grid tw-grid-cols-2 tw-gap-4">
-        {/* Map over team members and render expandable cards */}
+      <div
+        className={`tw-grid tw-grid-cols-2 tw-gap-4 ${
+          expandedIndex !== -1 ? "tw-hidden" : ""
+        }`}
+      >
+        {/* Map over team members and render cards */}
         {teamMembers.map((member, index) => (
           <div
             key={index}
-            className={`tw-bg-white tw-rounded-lg tw-shadow-md tw-p-4 tw-cursor-pointer tw-transition-all ${
-              expandedIndex === index ? "tw-h-auto" : "tw-h-20"
-            }`}
+            className="tw-bg-white tw-rounded-lg tw-shadow-md tw-p-4 tw-cursor-pointer tw-transition-all tw-h-20"
             onClick={() => handleCardClick(index)}
           >
-            <div className="tw-flex tw-items-center">
+            <div className="tw-flex tw-justify-between tw-items-center">
               <div className="tw-font-bold">{member.name}</div>
-              {/* Conditionally render profile picture if the card is expanded */}
-              {expandedIndex === index && (
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="tw-w-20 tw-h-20 tw-ml-4 tw-rounded-full"
-                />
-              )}
             </div>
-            {/* Conditionally render description if the card is expanded */}
-            {expandedIndex === index && (
-              <div className="tw-text-sm tw-mt-2">{member.description}</div>
-            )}
-            {/* Conditionally render LinkedIn and GitHub links if the card is expanded */}
-            {expandedIndex === index && (
-              <div className="tw-flex tw-mt-2">
-                <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="tw-mr-2 tw-text-blue-600">LinkedIn</a>
-                <a href={member.github} target="_blank" rel="noopener noreferrer" className="tw-text-gray-700">GitHub</a>
-              </div>
-            )}
           </div>
         ))}
       </div>
+      {expandedIndex !== -1 && (
+        <div
+          className="tw-bg-white tw-rounded-lg tw-shadow-md tw-p-4 tw-cursor-pointer tw-transition-all tw-mx-auto tw-my-4 tw-max-w-2xl"
+          onClick={() => setExpandedIndex(-1)}
+        >
+          <div className="tw-flex tw-flex-col tw-items-center">
+            <img
+              src={teamMembers[expandedIndex].image}
+              alt={teamMembers[expandedIndex].name}
+              className="tw-w-20 tw-h-20 tw-rounded-full tw-mb-4"
+            />
+            <div className="tw-font-bold">
+              {teamMembers[expandedIndex].name}
+            </div>
+            <div className="tw-text-sm tw-mt-2">
+              {teamMembers[expandedIndex].description}
+            </div>
+            <div className="tw-flex tw-mt-2">
+              <a
+                href={teamMembers[expandedIndex].linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tw-mr-2 tw-text-blue-600"
+              >
+                <FontAwesomeIcon
+                  icon={faLinkedin}
+                  className="tw-w-12 tw-h-12"
+                />
+              </a>
+              <a
+                href={teamMembers[expandedIndex].github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="tw-text-gray-700"
+              >
+                <FontAwesomeIcon
+                  icon={faGithubSquare}
+                  className="tw-w-12 tw-h-12"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
