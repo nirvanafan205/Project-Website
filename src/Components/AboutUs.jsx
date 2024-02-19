@@ -35,7 +35,6 @@ const AboutUs = () => {
     },
   ];
 
-  // Define state to manage which card is expanded
   const [expandedIndex, setExpandedIndex] = useState(-1);
 
   // Function to handle card click

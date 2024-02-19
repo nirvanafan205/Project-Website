@@ -5,7 +5,6 @@ import { faHeartPulse } from "@fortawesome/free-solid-svg-icons";
 const HeroSection = () => {
   return (
     <section className="tw-bg-violet-950 tw-flex tw-flex-col tw-justify-center tw-items-center tw-py-10">
-      {/* Use tw-mx-auto on the image to center it */}
       <img
         className="tw-h-64 tw-w-64 tw-rounded-lg tw-mx-auto"
         src="/projectLogo.png"
@@ -25,7 +24,7 @@ const HeroSection = () => {
           Textiles for Enhanced Performance and Well-being
         </h2>
         <img
-          className="tw-h-64 tw-w-128 md:tw-w-128 tw-mt-4"
+          className="tw-h-64 tw-w-128 md:tw-w-128 tw-mt-4 tw-shadow-2xl tw-shadow-emerald-700 tw-rounded-2xl"
           src="/ARCS.png"
           alt="project logo"
         />
