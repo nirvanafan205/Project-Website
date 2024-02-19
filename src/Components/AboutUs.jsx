@@ -42,7 +42,7 @@ const AboutUs = () => {
   };
 
   return (
-    <div className="tw-bg-blue-300 tw-min-h-screen tw-flex tw-flex-col tw-justify-center tw-items-center">
+    <div className="tw-bg-blue-300 tw-flex tw-flex-col tw-justify-center tw-items-center">
       <h1 className="tw-text-center tw-font-bold tw-text-4xl tw-py-8">
         MEET THE TEAM
       </h1>
