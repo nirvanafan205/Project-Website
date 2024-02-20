@@ -1,38 +1,55 @@
-import React from "react";
-import { FaReact, FaGithub, FaJira, FaFigma } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { Icon } from "@iconify/react";
+import githubIcon from "@iconify-icons/logos/github-icon";
+import kotlinIcon from "@iconify-icons/devicon/kotlin";
+import jiraIcon from "@iconify-icons/logos/jira";
+import figmaIcon from "@iconify-icons/logos/figma";
+import reactIcon from "@iconify-icons/logos/react";
+import firebaseIcon from "@iconify-icons/logos/firebase";
+import reduxIcon from "@iconify-icons/logos/redux";
+import "../style.css";
+
+const initialIcons = [
+  githubIcon,
+  kotlinIcon,
+  jiraIcon,
+  figmaIcon,
+  reactIcon,
+  firebaseIcon,
+  reduxIcon,
+];
 
 const ProjectInfo = () => {
+  const [icons, setIcons] = useState(initialIcons);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setIcons((prevIcons) => {
+        // Move the first icon to the end to create an infinite loop
+        return [...prevIcons.slice(1), prevIcons[0]];
+      });
+    }, 2000); // 2000ms interval for each icon move
+
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div>
-      {/* About Section */}
-      <section className="tw-bg-indigo-300">
-        <h2>About</h2>
-        <p>Write about your project here...</p>
-      </section>
-
-      {/* Feature Section */}
-      <section className="tw-bg-violet-200">
-        <h2>Features</h2>
-        <ul>
-          <li>Feature 1</li>
-          <li>Feature 2</li>
-        </ul>
-      </section>
-
-      {/* Framework Design Section */}
-      <section className="tw-bg-emerald-100">
-        <h2>Framework Design</h2>
-        <p>Describe the framework design of your project...</p>
-      </section>
+      {/* Existing sections... */}
 
       {/* Technologies and Skills Section */}
-      <section className="tw-bg-pink-100 tw-flex tw-items-center">
-        <h2 className="tw-mr-4">Technologies and Skills</h2>
-        <div className="tw-flex">
-          <FaReact className="tw-text-3xl tw-mr-4" />
-          <FaGithub className="tw-text-3xl tw-mr-4" />
-          <FaJira className="tw-text-3xl tw-mr-4" />
-          <FaFigma className="tw-text-3xl tw-mr-4" />
+      <section className="tw-flex tw-flex-col tw-items-center tw-justify-center tw-bg-pink-100 tw-py-8">
+        <h2 className="tw-text-2xl tw-mb-4">Technologies and Skills</h2>
+        <div className="carousel-container tw-relative tw-w-full tw-flex tw-justify-center">
+          <div className="sliding-container tw-flex">
+            {icons.map((icon, index) => (
+              <Icon
+                key={index}
+                className="icon tw-text-6xl tw-mx-4" // Adjust margins as necessary
+                icon={icon}
+              />
+            ))}
+          </div>
         </div>
       </section>
     </div>
