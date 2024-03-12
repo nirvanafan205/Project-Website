@@ -1,114 +1,81 @@
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
+const teamMembers = [
+  {
+    name: "Thomas Dinh",
+    role: "Team Lead/Full Stack Developer",
+    imageUrl: "/Thomas.png",
+    linkedinUrl: "https://www.linkedin.com/in/qtdinh/",
+    githubUrl: "https://github.com/qtdinh",
+  },
+  {
+    name: "Carlos Figueroa",
+    role: "Quality Assurance Developer",
+    imageUrl: "/Carlos.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/carlos-figueroa-3a8358176/",
+    githubUrl: "https://github.com/cfiguer055",
+  },
+  {
+    name: "Taylor Nastally",
+    role: "Android Developer",
+    imageUrl: "/Taylor.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/taylor-nastally-01aa11219/",
+    githubUrl: "https://github.com/Viper-one-one",
+  },
+  {
+    name: "Matthew Garcia",
+    role: "Front End Developer",
+    imageUrl: "/Matthew.jpg",
+    linkedinUrl: "https://www.linkedin.com/in/matthew-garcia-b0301b217/",
+    githubUrl: "https://github.com/nirvanafan205",
+  },
+];
+
 const AboutUs = () => {
-  // Define team members with their names, descriptions, image file names, LinkedIn, and GitHub profiles
-  const teamMembers = [
-    {
-      name: "Thomas Dinh",
-      description: "Team Lead/Full Stack Engineer",
-      image: "/Thomas.png",
-      linkedin: "https://www.linkedin.com/in/qtdinh/",
-      github: "https://github.com/qtdinh",
-    },
-    {
-      name: "Carlos Figueroa",
-      description: "Quality Assurance Engineer",
-      image: "/Carlos.jpg",
-      linkedin: "https://www.linkedin.com/in/carlos-figueroa-3a8358176/",
-      github: "https://github.com/cfiguer055",
-    },
-    {
-      name: "Taylor Nastally",
-      description: "Android Engineer",
-      image: "/Taylor.jpg",
-      linkedin: "https://www.linkedin.com/in/taylor-nastally-01aa11219/",
-      github: "https://github.com/Viper-one-one",
-    },
-    {
-      name: "Matthew Garcia",
-      description: "Front End Engineer",
-      image: "/Matthew.jpg",
-      linkedin: "https://www.linkedin.com/in/matthew-garcia-b0301b217/",
-      github: "https://github.com/nirvanafan205",
-    },
-  ];
-
-  const [expandedIndex, setExpandedIndex] = useState(-1);
-
-  // Function to handle card click
-  const handleCardClick = (index) => {
-    setExpandedIndex((prevIndex) => (prevIndex === index ? -1 : index));
-  };
-
   return (
-    <div className="tw-bg-blue-300 tw-flex tw-flex-col tw-justify-center tw-items-center tw-py-8">
-      <h1 className="tw-text-center tw-font-bold tw-text-4xl tw-mb-8">
-        MEET THE TEAM
-      </h1>
-      <div
-        className={`tw-grid tw-grid-cols-2 tw-gap-4 ${
-          expandedIndex !== -1 ? "tw-hidden" : ""
-        }`}
-      >
-        {/* Map over team members and render cards */}
-        {teamMembers.map((member, index) => (
-          <div
-            key={index}
-            className="tw-bg-white tw-rounded-lg tw-shadow-md tw-p-4 tw-cursor-pointer tw-transition-all tw-h-20"
-            onClick={() => handleCardClick(index)}
-          >
-            <div className="tw-flex tw-justify-between tw-items-center">
-              <div className="tw-font-bold">{member.name}</div>
-            </div>
-          </div>
-        ))}
+    <div className="tw-mx-auto tw-p-5">
+      <div className="tw-overflow-x-auto">
+        <table className="tw-min-w-full tw-table-auto">
+          <thead className="tw-bg-gray-200">
+            <tr>
+              <th className="tw-px-4 tw-py-2 tw-text-left">Name</th>
+              <th className="tw-px-4 tw-py-2 tw-text-left">Role</th>
+              <th className="tw-px-4 tw-py-2 tw-text-left">Social</th>
+            </tr>
+          </thead>
+          <tbody className="tw-bg-white">
+            {teamMembers.map((member, index) => (
+              <tr key={index} className="tw-border-b">
+                <td className="tw-flex tw-items-center tw-px-4 tw-py-2">
+                  <img
+                    src={member.imageUrl}
+                    alt={`Portrait of ${member.name}`}
+                    className="tw-h-14 tw-w-14 tw-rounded-full tw-mr-4"
+                  />
+                  {member.name}
+                </td>
+                <td className="tw-px-4 tw-py-2">{member.role}</td>
+                <td className="tw-px-4 tw-py-2">
+                  <a
+                    href={member.linkedinUrl}
+                    className="tw-mr-3 tw-text-blue-600 hover:tw-text-blue-800"
+                  >
+                    <FontAwesomeIcon icon={faLinkedin} size="2xl" />
+                  </a>
+                  <a
+                    href={member.githubUrl}
+                    className="tw-text-black hover:tw-text-gray-800"
+                  >
+                    <FontAwesomeIcon icon={faGithubSquare} size="2xl" />
+                  </a>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-      {expandedIndex !== -1 && (
-        <div
-          className="tw-bg-white tw-rounded-lg tw-shadow-md tw-p-4 tw-cursor-pointer tw-transition-all tw-mx-auto tw-my-4 tw-max-w-2xl"
-          onClick={() => setExpandedIndex(-1)}
-        >
-          <div className="tw-flex tw-flex-col tw-items-center">
-            <img
-              src={teamMembers[expandedIndex].image}
-              alt={teamMembers[expandedIndex].name}
-              className="tw-w-20 tw-h-20 tw-rounded-full tw-mb-4"
-            />
-            <div className="tw-font-bold">
-              {teamMembers[expandedIndex].name}
-            </div>
-            <div className="tw-text-sm tw-mt-2">
-              {teamMembers[expandedIndex].description}
-            </div>
-            <div className="tw-flex tw-mt-2">
-              <a
-                href={teamMembers[expandedIndex].linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="tw-mr-2 tw-text-blue-600"
-              >
-                <FontAwesomeIcon
-                  icon={faLinkedin}
-                  className="tw-w-12 tw-h-12"
-                />
-              </a>
-              <a
-                href={teamMembers[expandedIndex].github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="tw-text-gray-700"
-              >
-                <FontAwesomeIcon
-                  icon={faGithubSquare}
-                  className="tw-w-12 tw-h-12"
-                />
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   );
 };
