@@ -5,6 +5,7 @@ import Footer from "./Components/Footer";
 import ProjectInfo from "./Components/ProjectInfo";
 import HeroSection from "./Components/HeroSection";
 import Purpose from "./Components/Purpose";
+import Gallery from "./Components/Gallery";
 import "./style.css";
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
       <AboutUs />
       <ProjectInfo />
       <Purpose />
+      <Gallery />
       <Footer />
     </>
   );

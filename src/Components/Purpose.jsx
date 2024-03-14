@@ -23,7 +23,8 @@ const Purpose = () => {
               Major Features in the mobile application
             </h3>
             <ol>
-              <li>Login/Logout</li>
+              <li>Signin/Signout</li>
+              <li>ToS</li>
               <li>Activity Rings</li>
               <li>Sleep/Heart Rate Data</li>
               <li>Profile Update/Creation/Deletion</li>
