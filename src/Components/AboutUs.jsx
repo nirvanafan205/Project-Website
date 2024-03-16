@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubSquare, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
@@ -33,9 +33,9 @@ const teamMembers = [
   },
 ];
 
-const AboutUs = () => {
+const AboutUs = forwardRef((props, ref) => {
   return (
-    <div className="tw-mx-auto tw-p-5">
+    <div ref={ref} className="tw-mx-auto tw-p-5">
       <div className="tw-overflow-x-auto">
         <table className="tw-min-w-full tw-table-auto">
           <thead className="tw-bg-gray-200">
@@ -78,6 +78,6 @@ const AboutUs = () => {
       </div>
     </div>
   );
-};
+});
 
 export default AboutUs;

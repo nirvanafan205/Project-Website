@@ -1,8 +1,8 @@
-import React from "react";
+import React, { forwardRef } from 'react';
 
-const Gallery = () => {
+const Gallery = forwardRef((props, ref) => {
   return (
-    <div>
+    <div ref={ref}>
       <section className="tw-bg-blue-100 tw-flex tw-flex-col tw-justify-center tw-items-center tw-py-4">
         <h2 className="tw-text-2xl tw-font-bold tw-mb-4">Gallery & Demo</h2>
         <div className="tw-grid tw-grid-cols-4 tw-gap-8">
@@ -98,6 +98,6 @@ const Gallery = () => {
       </section>
     </div>
   );
-};
+});
 
 export default Gallery;

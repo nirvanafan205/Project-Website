@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { Icon } from "@iconify/react";
 import githubIcon from "@iconify-icons/logos/github-icon";
 import kotlinIcon from "@iconify-icons/devicon/kotlin";
@@ -10,9 +10,9 @@ import firebaseIcon from "@iconify-icons/logos/firebase";
 import bootstrapIcon from "@iconify-icons/devicon/bootstrap";
 import reduxIcon from "@iconify-icons/logos/redux";
 
-const ProjectInfo = () => {
+const ProjectInfo = forwardRef((props, ref) => {
   return (
-    <div>
+    <div ref={ref}>
       <section className="tw-bg-pink-100 tw-flex tw-flex-col tw-justify-center tw-items-center">
         <h2 className="tw-text-2xl tw-font-bold tw-mb-4">
           Technologies and Skills
@@ -112,6 +112,6 @@ const ProjectInfo = () => {
       </section>
     </div>
   );
-};
+});
 
 export default ProjectInfo;
