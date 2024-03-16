@@ -20,7 +20,7 @@ const HeroSection = () => {
           Textiles for Enhanced Performance and Well-being
         </h1>
         <img
-          className="tw-h-64 tw-w-128 md:tw-w-128 tw-mt-4 tw-shadow-2xl tw-shadow-emerald-700 tw-rounded-2xl"
+          className="tw-h-64 tw-w-128 md:tw-w-128 tw-mt-4 tw-shadow-2xl"
           src="/ARCS.png"
           alt="project logo"
         />

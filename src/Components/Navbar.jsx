@@ -1,36 +1,24 @@
-import React from "react";
+import React from 'react';
 
-const Navbar = () => {
+const NavBar = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth', 
     });
   };
 
   return (
-    <nav className="tw-bg-black tw-fixed tw-top-0 tw-w-full tw-z-50 tw-flex tw-justify-center tw-items-center tw-py-14">
-      <ul className="tw-flex tw-list-none">
-        <li className="tw-mx-4">
-          <a className="tw-text-white hover:tw-underline" onClick={scrollToTop}>
-            Smart Textile App
-          </a>
-        </li>
-        <li className="tw-mx-4">
-          <a className="tw-text-white hover:tw-underline">About Us</a>
-        </li>
-        <li className="tw-mx-4">
-          <a className="tw-text-white hover:tw-underline">Gallery</a>
-        </li>
-        <li className="tw-mx-4">
-          <a className="tw-text-white hover:tw-underline">Project Info</a>
-        </li>
-        <li className="tw-mx-4">
-          <a className="tw-text-white hover:tw-underline">Purpose</a>
-        </li>
+    <nav className="tw-sticky tw-top-0 tw-z-50 tw-bg-gray-800 tw-text-white tw-p-4">
+      <ul className="tw-flex tw-justify-between tw-items-center">
+        <li className="tw-mx-4 tw-hover:text-gray-300 tw-cursor-pointer" onClick={scrollToTop}>Smart Textile</li>
+        <li className="tw-mx-4 tw-hover:text-gray-300 tw-cursor-pointer">Gallery</li>
+        <li className="tw-mx-4 tw-hover:text-gray-300 tw-cursor-pointer">About Us</li>
+        <li className="tw-mx-4 tw-hover:text-gray-300 tw-cursor-pointer">Purpose</li>
+        <li className="tw-mx-4 tw-hover:text-gray-300 tw-cursor-pointer">Technology</li>
       </ul>
     </nav>
   );
 };
 
-export default Navbar;
+export default NavBar;
