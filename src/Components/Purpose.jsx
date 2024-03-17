@@ -3,7 +3,7 @@ import React, { forwardRef } from "react";
 const Purpose = forwardRef((props, ref) => {
   return (
     <div ref={ref}>
-      <section className="tw-bg-green-100 tw-flex tw-flex-col tw-justify-center tw-items-center tw-py-4">
+      <section className="tw-bg-blue-100 tw-flex tw-flex-col tw-justify-center tw-items-center tw-py-4">
         <h2 className="tw-text-2xl tw-font-bold tw-mb-4">
           About Smart Textile App
         </h2>
@@ -30,11 +30,21 @@ const Purpose = forwardRef((props, ref) => {
             </ol>
           </div>
           <div className="tw-flex tw-flex-col tw-w-full tw-p-4 tw-md:w-1/3">
-            <h3 className="tw-font-semibold tw-mb-2">Apple Health:</h3>
-            <p>
-              Talk about in regards of the rings, sleep/heart data, and anything
-              else worth mentioning
-            </p>
+            <ul className="tw-list-disc tw-list-inside">
+              <li>
+                Integration with the Activity Rings to keep track of player's
+                progress
+              </li>
+              <li>Tracks sleep patterns to suggest sleep habits</li>
+              <li>
+                Monitors heart rate during different activities for health
+                insights
+              </li>
+              <li>
+                Settings page to update email, change password, delete data, and
+                delete account permanently
+              </li>
+            </ul>
           </div>
         </div>
       </section>

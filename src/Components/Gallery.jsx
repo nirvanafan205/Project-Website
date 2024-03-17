@@ -1,9 +1,9 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef } from "react";
 
 const Gallery = forwardRef((props, ref) => {
   return (
     <div ref={ref}>
-      <section className="tw-bg-blue-100 tw-flex tw-flex-col tw-justify-center tw-items-center tw-py-4">
+      <section className="tw-bg-white tw-flex tw-flex-col tw-justify-center tw-items-center tw-py-4">
         <h2 className="tw-text-2xl tw-font-bold tw-mb-4">Gallery & Demo</h2>
         <div className="tw-grid tw-grid-cols-4 tw-gap-8">
           <div className="tw-flex tw-flex-col tw-items-center">
@@ -93,6 +93,17 @@ const Gallery = forwardRef((props, ref) => {
           <div className="tw-flex tw-flex-col tw-items-center">
             <img src="metrics.png" alt="Metrics" className="tw-w-64 tw-h-94" />
             <p className="tw-text-2xl tw-font-bold tw-mt-2">Metrics</p>
+          </div>
+
+          <div className="tw-flex tw-flex-col tw-items-center tw-col-span-4">
+            <video
+            controls
+            className="tw-max-w-xs tw-rounded-md"
+            src="/demo.mp4"
+            type="video/mp4">
+            browser does not support the video
+          </video>
+            <p className="tw-text-2xl tw-font-bold tw-mt-2">Demo Video</p>
           </div>
         </div>
       </section>

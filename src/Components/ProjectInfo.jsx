@@ -13,10 +13,29 @@ import reduxIcon from "@iconify-icons/logos/redux";
 const ProjectInfo = forwardRef((props, ref) => {
   return (
     <div ref={ref}>
-      <section className="tw-bg-pink-100 tw-flex tw-flex-col tw-justify-center tw-items-center">
+      <section className="tw-bg-blue-100 tw-flex tw-flex-col tw-justify-center tw-items-center">
         <h2 className="tw-text-2xl tw-font-bold tw-mb-4">
           Technologies and Skills
         </h2>
+
+        <div className="tw-w-full tw-flex tw-flex-col tw-items-center tw-py-4">
+          <h3 className="tw-text-xl tw-font-semibold tw-mb-2">
+            Skills Required:
+          </h3>
+          <ul className="tw-list-disc tw-list-inside tw-text-left tw-px-4 tw-max-w-4xl">
+            <li>Strong understanding of JavaScript</li>
+            <li>Experience with React and web development</li>
+            <li>
+              Git for version control to properly track changes in the code
+            </li>
+            <li>Familiarity with Firebase for backend services</li>
+            <li>Knowledge of UI/UX design principles with Figma</li>
+            <li>
+              Communication between stakholders and team for continous progress
+            </li>
+          </ul>
+        </div>
+
         <div className="tw-flex tw-pt-4 tw-pb-4 tw-flex-wrap">
           <a
             href="https://git-scm.com/doc"

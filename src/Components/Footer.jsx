@@ -15,36 +15,36 @@ const Footer = () => {
         <a href="https://www.linkedin.com/school/california-state-university-northridge/mycompany/verification/">
           <FontAwesomeIcon
             icon={faLinkedin}
-            className="tw-text-blue-600 tw-mb-2 tw-mr-4 tw-w-12 tw-h-12 hover:tw-text-red-300"
+            className="tw-text-blue-600 tw-mb-2 tw-mr-4 tw-w-12 tw-h-12 hover:tw-text-red-500"
           />
         </a>
         <a href="https://github.com/CSU-Northridge-ARCS-Dev/smart-clothing-app">
           <FontAwesomeIcon
             icon={faGithubSquare}
-            className="tw-text-blue-600 tw-mb-2 tw-mr-4 tw-w-12 tw-h-12 hover:tw-text-red-300"
+            className="tw-text-blue-600 tw-mb-2 tw-mr-4 tw-w-12 tw-h-12 hover:tw-text-red-500"
           />
         </a>
         <a href="https://www.instagram.com/csun_edu/?hl=en">
           <FontAwesomeIcon
             icon={faInstagram}
-            className="tw-text-blue-600 tw-mb-2 tw-mr-4 tw-w-12 tw-h-12 hover:tw-text-red-300"
+            className="tw-text-blue-600 tw-mb-2 tw-mr-4 tw-w-12 tw-h-12 hover:tw-text-red-500"
           />
         </a>
         <a href="https://twitter.com/csunorthridge?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
           <FontAwesomeIcon
             icon={faTwitter}
-            className="tw-text-blue-600 tw-mb-2 tw-mr-4 tw-w-12 tw-h-12 hover:tw-text-red-300"
+            className="tw-text-blue-600 tw-mb-2 tw-mr-4 tw-w-12 tw-h-12 hover:tw-text-red-500"
           />
         </a>
         <a href="https://www.facebook.com/calstatenorthridge">
           <FontAwesomeIcon
             icon={faFacebook}
-            className="tw-text-blue-600 tw-mb-2 tw-w-12 tw-h-12 hover:tw-text-red-300"
+            className="tw-text-blue-600 tw-mb-2 tw-w-12 tw-h-12 hover:tw-text-red-500"
           />
         </a>
       </div>
       <a href="https://www.csun.edu/~xjiang/SeniorDesign/">
-        <p className="tw-text-xl tw-text-white tw-pb-6 hover:tw-text-red-700">
+        <p className="tw-text-xl tw-text-white tw-pb-6 hover:tw-text-red-500">
           Click here to return to the course!
         </p>
       </a>
